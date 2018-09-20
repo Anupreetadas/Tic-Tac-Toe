@@ -10,23 +10,34 @@
     tools:context="com.anyconfusionhere.tictactoe.MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/reset"
+        android:onClick="startOver" />
+
+    <ImageView
         android:id="@+id/gridView"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="356dp"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:src="@drawable/grid" />
 
     <ImageView
+        android:id="@+id/topLeftView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/topLeftView"
-        android:minWidth="110dp"
+        android:layout_alignStart="@+id/gridView"
+        android:layout_alignLeft="@+id/gridView"
+        android:layout_alignTop="@+id/gridView"
         android:minHeight="110dp"
-        android:onClick="topLeft"
-        android:layout_below="@+id/oTurn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:minWidth="110dp"
+        android:onClick="topLeft" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -50,57 +61,61 @@
         android:onClick="topRight" />
 
     <ImageView
+        android:id="@+id/midMidView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/midMidView"
-        android:minWidth="110dp"
-        android:minHeight="110dp"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="182dp"
+        android:minHeight="110dp"
+        android:minWidth="110dp"
         android:onClick="midMid" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/midRightView"
-        android:minWidth="110dp"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_alignEnd="@+id/gridView"
+        android:layout_alignRight="@+id/gridView"
+        android:layout_alignTop="@+id/midMidView"
         android:minHeight="110dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:minWidth="110dp"
         android:onClick="midRight" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/bottomRightView"
-        android:minWidth="110dp"
-        android:minHeight="110dp"
-        android:onClick="bottomRight"
-        android:layout_above="@+id/xTurn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gridView"
+        android:layout_alignEnd="@+id/gridView"
+        android:layout_alignRight="@+id/gridView"
+        android:minHeight="110dp"
+        android:minWidth="110dp"
+        android:onClick="bottomRight" />
+
+    <ImageView
         android:id="@+id/bottomMidView"
-        android:minWidth="110dp"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gridView"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_toStartOf="@+id/topRightView"
+        android:layout_toLeftOf="@+id/topRightView"
         android:minHeight="110dp"
-        android:onClick="bottomMid"
-        android:layout_above="@+id/xTurn"
-        android:layout_centerHorizontal="true" />
+        android:minWidth="110dp"
+        android:onClick="bottomMid" />
 
     <ImageView
+        android:id="@+id/bottomLeftView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bottomLeftView"
-        android:minWidth="110dp"
+        android:layout_alignBottom="@+id/gridView"
+        android:layout_alignStart="@+id/gridView"
+        android:layout_alignLeft="@+id/gridView"
         android:minHeight="110dp"
-        android:onClick="bottomLeft"
-        android:layout_above="@+id/xTurn"
-        android:layout_toLeftOf="@+id/bottomMidView"
-        android:layout_toStartOf="@+id/bottomMidView" />
+        android:minWidth="110dp"
+        android:onClick="bottomLeft" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -114,37 +129,27 @@
         android:layout_alignStart="@+id/bottomLeftView" />
 
     <TextView
+        android:id="@+id/oTurn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="O&apos;S TURN"
-        android:id="@+id/oTurn"
-        android:textSize="50dp"
-        android:alpha="0"
-        android:layout_alignTop="@+id/gridView"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:text="O&apos;S TURN"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="X&apos;S TURN"
         android:id="@+id/xTurn"
-        android:textSize="50dp"
-        android:alpha="0"
-        android:layout_alignBottom="@+id/gridView"
-        android:layout_alignRight="@+id/oTurn"
-        android:layout_alignEnd="@+id/oTurn" />
-
-    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/reset"
-        android:onClick="startOver" />
+        android:layout_alignStart="@+id/gridView"
+        android:layout_alignLeft="@+id/gridView"
+        android:layout_below="@+id/gridView"
+        android:alpha="0"
+        android:text="X&apos;S TURN"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp" />
 
 </RelativeLayout>
