@@ -1,12 +1,22 @@
 package com.anyconfusionhere.tictactoe;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Button;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     boolean turn = true;
     boolean initialization = false;
@@ -151,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }
         isSolved();
         checkTurn();
+        topLeftImage.setEnabled(false);
     }
 
     public void topRight(View view) {
@@ -165,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        topRightImage.setEnabled(false);
     }
 
     public void topMid(View view) {
@@ -182,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        topMidImage.setEnabled(false);
     }
 
     public void midMid(View view) {
@@ -199,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        midMidImage.setEnabled(false);
     }
 
     public void midLeft(View view) {
@@ -216,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        midLeftImage.setEnabled(false);
     }
 
     public void midRight(View view) {
@@ -231,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        midRightImage.setEnabled(true);
     }
 
     public void bottomRight(View view) {
@@ -246,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        bottomRightImage.setEnabled(true);
 
     }
 
@@ -264,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        bottomLeftImage.setEnabled(false);
 
     }
 
@@ -281,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
         }
         checkTurn();
         isSolved();
+        bottomMidImage.setEnabled(false);
     }
 
     public void disableButtons() {
@@ -310,9 +329,9 @@ public class MainActivity extends AppCompatActivity {
             turn = true;
         }
     }
-    
-    public void startOver(View view){
-        
+
+    public void startOver(View view) {
+
         topLeftImage.setEnabled(true);
         topMidImage.setEnabled(true);
         topRightImage.setEnabled(true);
@@ -335,7 +354,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         initialization = false;
-        
     }
 
 }
+
+
+
+
+
+
